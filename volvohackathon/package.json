@@ -1,0 +1,17 @@
+{
+  "name": "volvohackathon",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-animate": "^1.6.3",
+    "angular-meteor": "^1.3.11",
+    "angular-sanitize": "^1.6.3",
+    "angular-simple-logger": "^0.1.7",
+    "angular-ui-router": "^0.4.2",
+    "babel-runtime": "^6.23.0",
+    "meteor-node-stubs": "~0.2.4"
+  }
+}
