@@ -98,8 +98,6 @@
         <item url="file://$USER_HOME$/.meteor/packages/blaze-tools/1.0.10/web.browser/tokens.js" />
         <item url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/caching-compiler.js" />
         <item url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/multi-file-caching-compiler.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/3.3.6/web.browser/dist/css/bootstrap.css" />
-        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/3.3.6/web.browser/dist/js/bootstrap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze/2.3.2/web.browser/dombackend.js" />
         <item url="file://$USER_HOME$/.meteor/packages/callback-hook/1.0.10/web.browser/hook.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze/2.3.2/web.browser/exceptions.js" />
@@ -232,8 +230,6 @@
       <root url="file://$USER_HOME$/.meteor/packages/blaze-tools/1.0.10/web.browser/tokens.js" />
       <root url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/caching-compiler.js" />
       <root url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/multi-file-caching-compiler.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/3.3.6/web.browser/dist/css/bootstrap.css" />
-      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/3.3.6/web.browser/dist/js/bootstrap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze/2.3.2/web.browser/dombackend.js" />
       <root url="file://$USER_HOME$/.meteor/packages/callback-hook/1.0.10/web.browser/hook.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze/2.3.2/web.browser/exceptions.js" />

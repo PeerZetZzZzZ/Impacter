@@ -1,45 +1,109 @@
+<style>
+    ul {
+        width: 100%;
+        display: table;
+        table-layout: fixed; /* optional, for equal spacing */
+        border-collapse: collapse;
+    }
+
+    li {
+        display: table-cell;
+        text-align: center;
+        border: 1px solid pink;
+        vertical-align: middle;
+    }
+</style>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col">
         <div align="center"><h1>Welcome to Impacter</h1></div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col">
         <div align="center">
             <h1>
-                <div class=" alert-success animated infinite pulse">{{mainMenuView.impacterOutput}}</div>
+                <div class=" alert-success">{{mainMenuView.impacterOutput}}</div>
             </h1>
         </div>
     </div>
 </div>
-
 <div class="row">
-    <div class="col-md-12">
+    <div class="col">
         <div align="center">
-            <div class="animated infinite pulse"><img style="width:20%;height:20%" src="micro.jpg"></div>
+            <div class="animated infinite pulse"><img style="width:15%;height:15%" src="micro.jpg"></div>
         </div>
     </div>
 </div>
 <br>
 <div class="row" ng-show="mainMenuView.impacterHint != ''">
-    <div class="col-md-12">
+    <div class="col">
         <div align="center">
-            <div class="alert alert-success" role="alert"><h3>{{mainMenuView.impacterHint}}</h3></div>
+            <div class="alert alert-warning" role="alert"><h4>{{mainMenuView.impacterHint}}</h4></div>
         </div>
     </div>
 </div>
+<div ng-show="mainMenuView.consideredPart != ''">
+    <ul>
+        <div ng-show="mainMenuView.partsSearchQuery.vehicle != undefined">
+            <li>Vehicle brand: {{mainMenuView.partsSearchQuery.vehicle}}</li>
+        </div>
+    </ul>
+</div>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<table style="width:100%" class="table">
-    <tr>
-        <td align="center" ng-repeat="possibleCommand in mainMenuView.possibleCommands">
-            <h3><span class="label label-info">{{possibleCommand}}</span></h3>
-        </td>
-    </tr>
-</table>
+<ul>
+    <li ng-repeat="possibleCommand in mainMenuView.possibleCommands">
+        {{possibleCommand}}
+    </li>
+</ul>
+
+<div ng-show="mainMenuView.partsFoundCount > 0">
+    <div class="row">
+        <div class="col col-50"> Preview</div>
+        <div class="col col-50"> Description</div>
+    </div>
+    <div ng-repeat="part in mainMenuView.partsFound">
+
+        <div class="row">
+            <div class="col col-50">
+            </div>
+            <div class="col col-50">
+                <div class="list card">
+
+                    <a class="item item-icon-left">
+                        <p>Number: <b>{{part.number}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Name: <b>{{part.name}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Producer: <b>{{part.producer}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Width: <b>{{part.width}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Height: <b>{{part.height}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Depth: <b>{{part.depth}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Vehicle: <b>{{part.vehicle}}</b></p>
+                    </a>
+
+                    <a class="item item-icon-left">
+                        <p>Description: <b>{{part.description}}</b></p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -12,6 +12,7 @@
     "angular-simple-logger": "^0.1.7",
     "angular-ui-router": "^0.4.2",
     "babel-runtime": "^6.23.0",
+    "ionic-sdk": "^1.2.4",
     "meteor-node-stubs": "~0.2.4"
   }
 }

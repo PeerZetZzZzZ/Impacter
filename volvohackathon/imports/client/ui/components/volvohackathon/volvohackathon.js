@@ -4,6 +4,9 @@ import uiRouter from "angular-ui-router";
 import ngSanitize from "angular-sanitize";
 import ngAnimate from "angular-animate";
 import template from "./volvohackathon.html";
+import "ionic-sdk/release/js/ionic";
+import "ionic-sdk/release/js/ionic-angular";
+import "ionic-sdk/release/css/ionic.css";
 import {name as MainMenuView} from "../MainMenuView/MainMenuView";
 class Volvohackathon {
 
@@ -21,6 +24,7 @@ export default angular.module(name, [
     ngAnimate,
     uiRouter,
     MainMenuView,
+    'ionic',
 ]).component(name, {
     template,
     controllerAs: name,
@@ -39,7 +43,6 @@ function config($locationProvider, $urlRouterProvider, $stateProvider) {
 
         });
 }
-
 
 function onReady() {
     angular.bootstrap(document, ['volvohackathonapp']);
