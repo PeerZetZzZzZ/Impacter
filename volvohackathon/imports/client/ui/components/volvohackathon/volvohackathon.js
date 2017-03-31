@@ -10,18 +10,6 @@ class Volvohackathon {
     constructor($scope, $rootScope, $state, $reactive) {
         let reactiveContext = $reactive(this).attach($scope);
         this.state = $state;
-        var commands = {
-            'hello': function () {
-                console.log('mam to ');
-                alert('Hello world!');
-            }
-        };
-
-// Add our commands to annyang
-        annyang.addCommands(commands);
-
-// Start listening.
-        annyang.start();
     }
 }
 
@@ -42,7 +30,7 @@ export default angular.module(name, [
 function config($locationProvider, $urlRouterProvider, $stateProvider) {
     'ngInject';
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/MainMenuView');
     $stateProvider
         .state('MainMenuView', {
             url: '/MainMenuView',
