@@ -9,101 +9,129 @@
     li {
         display: table-cell;
         text-align: center;
-        border: 1px solid pink;
+        border: 2px solid #ff0000;
         vertical-align: middle;
     }
+
+    .scrollableView {
+        width: 100%;
+        padding-bottom: 100px;
+        height: {{mainMenuView.screenHeight}}px;
+        overflow: scroll;
+    }
+
+    h1 { color: #111; font-family: 'Pacifico', cursive;  font-size: 55px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+    h2 { color: #ff5050; font-family: 'Ubuntu', sans-serif; sans-serif; font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+    h3 { color: #49a5bf; font-family: 'Revalia', cursive;  font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+    h3.queryDescription { color: #131313; font-family: 'Ubuntu', sans-serif; font-size: 28px; font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+    h4 { color: #ff9966; font-family: 'Palanquin Dark', sans-serif; font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+
+
 </style>
-<div class="row">
-    <div class="col">
-        <div align="center"><h1>Welcome to Impacter</h1></div>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div align="center">
-            <h1>
-                <div class=" alert-success">{{mainMenuView.impacterOutput}}</div>
-            </h1>
+<div id="mainView" class="scrollableView main">
+    <div class="row" id="up">
+        <div class="col">
+            <div align="center"><div class="button-stable"><h1>Welcome to Impacter</h1></div></div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div align="center">
-            <div class="animated infinite pulse"><img style="width:15%;height:15%" src="micro.jpg"></div>
-        </div>
-    </div>
-</div>
-<br>
-<div class="row" ng-show="mainMenuView.impacterHint != ''">
-    <div class="col">
-        <div align="center">
-            <div class="alert alert-warning" role="alert"><h4>{{mainMenuView.impacterHint}}</h4></div>
-        </div>
-    </div>
-</div>
-<div ng-show="mainMenuView.consideredPart != ''">
-    <ul>
-        <div ng-show="mainMenuView.partsSearchQuery.vehicle != undefined">
-            <li>Vehicle brand: {{mainMenuView.partsSearchQuery.vehicle}}</li>
-        </div>
-    </ul>
-</div>
-<br>
-<ul>
-    <li ng-repeat="possibleCommand in mainMenuView.possibleCommands">
-        {{possibleCommand}}
-    </li>
-</ul>
-
-<div ng-show="mainMenuView.partsFoundCount > 0">
     <div class="row">
-        <div class="col col-50"> Preview</div>
-        <div class="col col-50"> Description</div>
-    </div>
-    <div ng-repeat="part in mainMenuView.partsFound">
-
-        <div class="row">
-            <div class="col col-50">
+        <div class="col">
+            <div align="center">
+                    <div class="subheader"><h2>{{mainMenuView.impacterOutput}}</h2></div>
             </div>
-            <div class="col col-50">
-                <div class="list card">
-
-                    <a class="item item-icon-left">
-                        <p>Number: <b>{{part.number}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Name: <b>{{part.name}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Producer: <b>{{part.producer}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Width: <b>{{part.width}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Height: <b>{{part.height}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Depth: <b>{{part.depth}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Vehicle: <b>{{part.vehicle}}</b></p>
-                    </a>
-
-                    <a class="item item-icon-left">
-                        <p>Description: <b>{{part.description}}</b></p>
-                    </a>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div align="center">
+                <div class="animated infinite pulse"><img style="width:15%;height:15%" src="microphone.png"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="mainMenuView.impacterHint != ''">
+        <div class="col">
+            <div align="center">
+                <div class=""><h4>{{mainMenuView.impacterHint}}</h4></div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="mainMenuView.partsSearchQuery.name != undefined">
+        <div class="partSpec">
+                <div align="center">
+                    <h3 class="queryDescription">Part: {{mainMenuView.partsSearchQuery.name}}</h3>
+                </div>
+            <div class="item item-text-wrap">
+                <div ng-show="mainMenuView.partsSearchQuery.vehicle != undefined">
+                    <div align="center">
+                        Vehicle brand: {{mainMenuView.partsSearchQuery.vehicle}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <br>
+    <ul>
+        <li ng-repeat="possibleCommand in mainMenuView.possibleCommands">
+            <h3>{{possibleCommand}}</h3>
+        </li>
+    </ul>
+    <div ng-show="mainMenuView.partsFoundCount > 0">
+        <div class="row">
+            <div class="col col-50">
+                <div align="center"><h3 class="queryDescription">Preview</h3></div>
+            </div>
+            <div class="col col-50">
+                <div align="center"><h3 class="queryDescription">Desciption</h3></div>
+            </div>
+        </div>
+        <hr>
+        <div ng-repeat="part in mainMenuView.partsFound" class="whiteList">
+            <div class="row" id="{{$index + 1 }}">
+                <div class="col col-50">
+                    <h2>{{$index + 1 }}</h2>
+                    <div align="center">
+                        <img style="width:400px;height:400px;vertical-align: middle" src="{{part.pictureData}}">
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="list card">
+                        <a class="item item-icon-left">
+                            <p>Number: <b>{{part.number}}</b></p>
+                        </a>
 
+                        <a class="item item-icon-left">
+                            <p>Name: <b>{{part.name}}</b></p>
+                        </a>
+
+                        <a class="item item-icon-left">
+                            <p>Producer: <b>{{part.producer}}</b></p>
+                        </a>
+
+                        <a class="item item-icon-left">
+                            <p>Width: <b>{{part.width}}</b></p>
+                        </a>
+
+                        <a class="item item-icon-left">
+                            <p>Height: <b>{{part.height}}</b></p>
+                        </a>
+
+                        <a class="item item-icon-left">
+                            <p>Depth: <b>{{part.depth}}</b></p>
+                        </a>
+
+                        <a class="item item-icon-left">
+                            <p>Vehicle: <b>{{part.vehicle}}</b></p>
+                        </a>
+
+                        <a class="item item-icon-left">
+                            <p>Description: <b>{{part.description}}</b></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--<hr>-->
+        </div>
+        <hr id="down">
+    </div>
+</div>
